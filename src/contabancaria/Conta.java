@@ -7,7 +7,8 @@ package contabancaria;
  *
  * @author luisti
  */
-public class ContaBancaria {
+public class Conta {
+    
     private String nome; // variável de instânica
     
     public void configurarNome(String nome){
