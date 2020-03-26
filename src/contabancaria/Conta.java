@@ -11,6 +11,11 @@ public class Conta {
     
     private String nome; // variável de instânica
     
+    //o contrutor inicializa name com nome do parâmetro
+    public Conta(String nome){// o nome do construtor é o nome da clase
+        this.nome = nome;
+    }
+    
     public void configurarNome(String nome){
         
         this.nome = nome; // armazena o nome
