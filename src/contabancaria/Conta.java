@@ -1,5 +1,6 @@
-// Figura 3.1: Account.java
-// Classe Account que contém uma variável de instância name
+// Figura 3.8: Account.java
+// Classe Account com uma variável de instância balance do tipo double e um 
+//construtor e método deposit que executa a validação.
 // e métodos para configurar e obter seu valor.
 package contabancaria;
 
@@ -10,10 +11,31 @@ package contabancaria;
 public class Conta {
     
     private String nome; // variável de instânica
+    private double saldo; // variável de instância
     
-    //o contrutor inicializa name com nome do parâmetro
-    public Conta(String nome){// o nome do construtor é o nome da clase
-        this.nome = nome;
+    //Construtor de Account que recebe dois parâmetros
+    public Conta(String nome, double saldo){// o nome do construtor é o nome da clase
+        
+        this.nome = nome; // atribui name é variável de instância name
+        
+        //valida que o balance é maior que 0.0; se não for,
+        //a variável de instância balance mantém seu valor inicial padrão de 0.0
+        if(saldo > 0.0){ // se o saldo for válido
+            this.saldo = saldo; // o atribui à variável de instância balance
+        }
+    }
+    
+    // método que deposita (adiciona) apenas uma quantia válida no saldo
+    public void deposito(double valorDeposito){
+        
+        if(valorDeposito > 0.0){// se valorDeposito for válido
+            saldo = saldo + valorDeposito; // o diciona ao saldo
+        }
+    }
+    
+    //método retorna o saldo da conta
+    public double obterSaldo(){
+        return saldo;
     }
     
     public void configurarNome(String nome){
